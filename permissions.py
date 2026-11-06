@@ -12,7 +12,7 @@ KNOWN_TOOLS = {"list_funds", "get_portfolio", "list_my_customers"}
 def _read_customer_id(args: dict) -> int | None:
     """Liest customer_id aus den LLM-Argumenten, ungültige Werte ergeben None."""
     value = args.get("customer_id")
-    if value is None or isinstance(value, bool):  # True == 1 in Python, daher extra abfangen
+    if value is None or isinstance(value, bool):
         return None
     try:
         return int(value)
